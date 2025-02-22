@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>gen QRCODE</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#222" />
+    
+    <link rel="icon" type="image/x-icon" href="engine/barcode.png">
+    <link rel="stylesheet" href="engine/bulma-1.0.2.min.css">
+    <link rel="stylesheet" href="engine/style.css">
+
+    <script type="text/javascript" src="engine/qrcode.min.js"></script>
+</head>
+
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <div class="gen-intro">
+                            <img src="engine/barcode.png">
+                            <h1 class="title is-1 color5">gen QRCODE</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta, felis id iaculis dignissim, 
+                                enim est aliquet erat, sit amet condimentum sapien dolor ut odio. Sed id lacus vitae ante porttitor 
+                                condimentum ac non nisl. 
+                            </p>
+                        </div>
+
+                        <div class="gen-form">
+                            <form id="gen">
+                                <label class="label">Insert your link</label>
+                                <input type="text" id="genInput" class="input" placeholder="Add your link here..." />
+                                <div class="has-text-centered">
+                                    <button type="submit" class="button is-large">generate</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="gen-result">
+                            <h1 class="title is-3">RESULT</h1>
+                            <h2 class="subtitle is-5">
+                                click with right button or touch and press to save image
+                                <br>Resolution: 2000x2000px
+                                <br>Format: .PNG
+                            </h2>
+
+                            <div id="qrcode" class="box"></div>
+
+                            <p>Redirecting to </p>
+                            <p class="tag is-warning" id="genLink">https://fuoricorp.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var qrcode = new QRCode("qrcode", {
+            text: "https://fuoricorp.com",
+            width: 2000,
+            height: 2000,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        document.getElementById("gen").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var link = document.getElementById("genInput").value; 
+            qrcode.makeCode(link);
+            document.getElementById("genLink").innerText = "Redirecting to: " + link;
+        });
+    </script>
+</body>
+</html>
