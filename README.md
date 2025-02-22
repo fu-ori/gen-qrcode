@@ -1,1 +1,1 @@
-# QR-CODE GEN
+# gen-QRCODE
