@@ -25,15 +25,16 @@
                             <img src="engine/barcode.png">
                             <h1 class="title is-1 color5">gen QRCODE</h1>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta, felis id iaculis dignissim, 
-                                enim est aliquet erat, sit amet condimentum sapien dolor ut odio. Sed id lacus vitae ante porttitor 
-                                condimentum ac non nisl. 
+                                user interface for generating qr codes with custom links in simple steps. the qr code does not expire and can be used wherever you need. based on <a href="https://github.com/davidshimjs" target="_blank">@davidshimjs</a> code.
+                            </p>
+                            <p>
+                                you need to host your content separately.
                             </p>
                         </div>
 
                         <div class="gen-form">
                             <form id="gen">
-                                <label class="label">Insert your link</label>
+                                <label class="label">insert your link</label>
                                 <input type="text" id="genInput" class="input" placeholder="Add your link here..." />
                                 <div class="has-text-centered">
                                     <button type="submit" class="button is-large">generate</button>
@@ -44,16 +45,16 @@
 
                     <div class="column">
                         <div class="gen-result">
-                            <h1 class="title is-3">RESULT</h1>
+                            <h1 class="title is-3 color2">RESULT</h1>
                             <h2 class="subtitle is-5">
                                 click with right button or touch and press to save image
-                                <br>Resolution: 2000x2000px
+                                <br>Resolution: 2000 x 2000px
                                 <br>Format: .PNG
                             </h2>
 
                             <div id="qrcode" class="box hero is-light"></div>
 
-                            <p>Redirecting to </p>
+                            <p>redirecting to </p>
                             <p class="tag is-warning" id="genLink">https://fuoricorp.com</p>
                         </div>
                     </div>
