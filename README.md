@@ -1,5 +1,4 @@
-# gen-QRCODE
-
+# genQRCODE
 
 ## CREDITS
 - QRCODE 
